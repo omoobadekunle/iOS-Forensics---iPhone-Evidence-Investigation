@@ -26,8 +26,6 @@ A forensic examination of a supplied iPhone SE dataset running iOS 13.4.1, carri
 3. [Objectives](#objectives)
 4. [Tools and Environment](#tools-and-environment)
 5. [Evidence Handling and Methodology](#evidence-handling-and-methodology)
-   - [Evidence Integrity](#evidence-integrity)
-   - [Working Directory Structure](#working-directory-structure)
 6. [Device Information, Accounts and Settings](#device-information-accounts-and-settings)
 7. [Messages, Contacts, Calls and Attachments](#messages-contacts-calls-and-attachments)
 8. [Safari and Calendar Examination](#safari-and-calendar-examination)
@@ -37,11 +35,10 @@ A forensic examination of a supplied iPhone SE dataset running iOS 13.4.1, carri
 12. [Timeline of Events](#timeline-of-events)
 13. [Key Correlations and Alternative Explanations](#key-correlations-and-alternative-explanations)
 14. [Scope and Limitations](#scope-and-limitations)
-15. [Repository Structure](#repository-structure)
-16. [Screenshot Index](#screenshot-index)
-17. [Key Learning Outcomes](#key-learning-outcomes)
-18. [Disclaimer](#disclaimer)
-19. [Author](#author)
+15. [Screenshot Index](#screenshot-index)
+16. [Key Learning Outcomes](#key-learning-outcomes)
+17. [Disclaimer](#disclaimer)
+18. [Author](#author)
 
 ---
 
@@ -57,7 +54,7 @@ I approached the examination by preserving the source evidence, creating a separ
 
 In this laboratory exercise, I carried out a forensic examination of a supplied iPhone SE dataset associated with iOS 13.4.1. I used Kali Linux to examine the available digital evidence, extract relevant records and compare information from different artefacts. My main objective was to understand what the evidence could establish about device setup, messages, attachments, Health activity and location-related events.
 
-I began by checking the integrity of the supplied evidence archive. I used 7-Zip to test the ZIP archive, and the result was "Everything is Ok." I also recorded its size and SHA-256 hash. I then worked with extracted files in a separate working directory so that my examination would not intentionally alter the original evidence.
+I began by checking the integrity of the supplied evidence archive. I used 7-Zip to test the ZIP archive, and the result was "Everything is Ok." I also recorded its size and SHA-256 hash. I then worked with extracted files in a separate working area so that my examination would not intentionally alter the original evidence.
 
 During the examination, I analysed an Apple setup property list, the Messages database, recovered message attachments, the Health database and the location-related database.
 
@@ -102,8 +99,6 @@ My conclusions are limited to the records I examined, and further corroboration 
 
 ## Evidence Handling and Methodology
 
-### Evidence Integrity
-
 I tested the evidence archive with 7-Zip, and it passed the tool's integrity test.
 
 | Property | Result |
@@ -112,31 +107,16 @@ I tested the evidence archive with 7-Zip, and it passed the tool's integrity tes
 | File size | 9,629,286,492 bytes |
 | SHA-256 | `761854a669c38da6ac0a908afe77763d54ccb83044ff123350890d408c154551` |
 | 7-Zip test | Everything is Ok |
-| Working directory | `$HOME/SBT-DF205-Case-2-notes/` |
 
-I kept my analysis material separate from the original evidence and used extracted working files for database queries and metadata examination. The hash above belongs to the **ZIP archive**. The source **TAR** hash and its post-examination recheck must be recorded in the final handling log, and the ZIP hash must not be used in its place.
-
-### Working Directory Structure
-
-```
-$HOME/SBT-DF205-Case-2-notes/
-├── task3/Volumes/JOSH/NoTar-13-4-1/   # extracted file-system material
-├── task7/
-│   ├── health/healthdb_secure.sqlite  # Health records
-│   └── routined/Cache.sqlite          # location-related records
-└── task8/
-    ├── setup_evidence/                # setup property-list material
-    ├── recovered_attachments/         # recovered message attachments
-    └── reports/                       # examination output and reports
-```
+I kept my analysis material separate from the original evidence and used extracted working copies for database queries and metadata examination. The hash above belongs to the **ZIP archive**. The source **TAR** hash and its post-examination recheck must be recorded in the final handling log, and the ZIP hash must not be used in its place.
 
 **Screenshots for this section**
 
-> 📸 **Figure 01: Case Directory**
+> **Screenshot: Figure 01: Case Directory**
 > `![Figure 01 - Case Directory](screenshots/Figure_01_Case_Directory.png)`
-> *Insert a screenshot of the case working directory structure here.*
+> *Insert a screenshot of the case directory listing here.*
 
-> 📸 **Figure 02: Evidence Integrity**
+> **Screenshot: Figure 02: Evidence Integrity**
 > `![Figure 02 - Evidence Integrity](screenshots/Figure_02_Evidence_Integrity.png)`
 > *Insert a screenshot of the 7-Zip test result and the SHA-256 hash here.*
 
@@ -175,7 +155,7 @@ The property list records a completed setup process and a setup exit date of 21 
 
 **Screenshots for this section**
 
-> 📸 **Figure 03: Setup Property List**
+> **Screenshot: Figure 03: Setup Property List**
 > `![Figure 03 - Setup Property List](screenshots/Figure_03_Setup_Property_List.png)`
 > *Insert a screenshot of the parsed `com.apple.purplebuddy.plist` output here.*
 
@@ -213,7 +193,7 @@ I treated stored message text as evidence of what the database records, not as p
 
 ### Recovered attachments
 
-Source: `$HOME/SBT-DF205-Case-2-notes/task8/recovered_attachments/`
+Source: `task8/recovered_attachments/`
 
 | Message ID | Message content | Recovered file |
 |---|---|---|
@@ -238,15 +218,15 @@ File modification times were not treated as original capture times, since they c
 
 **Screenshots for this section**
 
-> 📸 **Figure 04: Messages Database**
+> **Screenshot: Figure 04: Messages Database**
 > `![Figure 04 - Messages Database](screenshots/Figure_04_Messages_Database.png)`
 > *Insert a screenshot of the `sms.db` query output with raw and converted timestamps here.*
 
-> 📸 **Figure 05: Attachment Examination**
+> **Screenshot: Figure 05: Attachment Examination**
 > `![Figure 05 - Attachment Examination](screenshots/Figure_05_Attachment_Examination.png)`
 > *Insert a screenshot of the recovered attachments and their hashes here.*
 
-> 📸 **Figure 06: Contacts and Calls**
+> **Screenshot: Figure 06: Contacts and Calls**
 > `![Figure 06 - Contacts and Calls](screenshots/Figure_06_Contacts_and_Calls.png)`
 > *Insert a screenshot of the AddressBook and CallHistory query results here.*
 
@@ -265,7 +245,7 @@ Approach followed for these artefacts:
 
 **Screenshots for this section**
 
-> 📸 **Figure 07: Safari and Calendar**
+> **Screenshot: Figure 07: Safari and Calendar**
 > `![Figure 07 - Safari and Calendar](screenshots/Figure_07_Safari_Calendar.png)`
 > *Insert a screenshot of the Safari history and Calendar query results here.*
 
@@ -281,11 +261,11 @@ I will not treat a sharing or deletion indicator as proof of a complete transfer
 
 **Screenshots for this section**
 
-> 📸 **Figure 08 (Part 1): Photos Metadata**
+> **Screenshot: Figure 08 (Part 1): Photos Metadata**
 > `![Figure 08 Part 1 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_1.png)`
 > *Insert the first Photos.sqlite metadata screenshot here.*
 
-> 📸 **Figure 08 (Part 2): Photos Metadata**
+> **Screenshot: Figure 08 (Part 2): Photos Metadata**
 > `![Figure 08 Part 2 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_2.png)`
 > *Insert the second Photos.sqlite metadata screenshot here.*
 
@@ -301,7 +281,7 @@ Where an activity interval overlaps a message, browsing or media event, the over
 
 **Screenshots for this section**
 
-> 📸 **Figure 09: KnowledgeC**
+> **Screenshot: Figure 09: KnowledgeC**
 > `![Figure 09 - KnowledgeC](screenshots/Figure_09_KnowledgeC.png)`
 > *Insert a screenshot of the KnowledgeC `ZOBJECT` query output here.*
 
@@ -311,7 +291,7 @@ Where an activity interval overlaps a message, browsing or media event, the over
 
 ### Health database
 
-Source: `$HOME/SBT-DF205-Case-2-notes/task7/health/healthdb_secure.sqlite` (tables `workout_events` and `workouts`)
+Source: `task7/health/healthdb_secure.sqlite` (tables `workout_events` and `workouts`)
 
 | Workout ID | First event (UTC) | Last event (UTC) | Duration (s) | Distance value | Energy value |
 |---|---|---|---|---|---|
@@ -326,13 +306,13 @@ Timestamps were interpreted as seconds relative to Apple's epoch and converted t
 
 **Screenshots for this section**
 
-> 📸 **Figure 10: Health Workouts**
+> **Screenshot: Figure 10: Health Workouts**
 > `![Figure 10 - Health Workouts](screenshots/Figure_10_Health_Workouts.png)`
 > *Insert a screenshot of the workout query results here.*
 
 ### Location database
 
-Source: `$HOME/SBT-DF205-Case-2-notes/task7/routined/Cache.sqlite` (table `ZRTVISITMO`)
+Source: `task7/routined/Cache.sqlite` (table `ZRTVISITMO`)
 
 | Record ID | Entry (UTC) | Exit (UTC) | Approx. coordinates | Uncertainty | Data points |
 |---|---|---|---|---|---|
@@ -348,7 +328,7 @@ Messages 40 and 41 (16:14:26 and 16:15:00 UTC on 12 April) fall within the long 
 
 **Screenshots for this section**
 
-> 📸 **Figure 11: Location Records**
+> **Screenshot: Figure 11: Location Records**
 > `![Figure 11 - Location Records](screenshots/Figure_11_Location_Records.png)`
 > *Insert a screenshot of the `ZRTVISITMO` query results here.*
 
@@ -413,37 +393,13 @@ The conclusions are deliberately limited to what the records show:
 
 ---
 
-## Repository Structure
-
-```
-SBT-DF205-Case-2/
-├── README.md
-├── SBT-DF205-Case_2.docx          # Full examination report
-├── Timeline.csv                   # Complete timeline with raw values
-└── screenshots/
-    ├── Figure_01_Case_Directory.png
-    ├── Figure_02_Evidence_Integrity.png
-    ├── Figure_03_Setup_Property_List.png
-    ├── Figure_04_Messages_Database.png
-    ├── Figure_05_Attachment_Examination.png
-    ├── Figure_06_Contacts_and_Calls.png
-    ├── Figure_07_Safari_Calendar.png
-    ├── Figure_08_Photos_Metadata_1.png
-    ├── Figure_08_Photos_Metadata_2.png
-    ├── Figure_09_KnowledgeC.png
-    ├── Figure_10_Health_Workouts.png
-    └── Figure_11_Location_Records.png
-```
-
----
-
 ## Screenshot Index
 
 Save each screenshot into the `screenshots/` folder using the exact filename below so the images render on GitHub.
 
 | Figure | Section | Filename | What to capture |
 |---|---|---|---|
-| 01 | Evidence Handling | `Figure_01_Case_Directory.png` | Case working directory structure |
+| 01 | Evidence Handling | `Figure_01_Case_Directory.png` | Case directory listing |
 | 02 | Evidence Handling | `Figure_02_Evidence_Integrity.png` | 7-Zip test result and SHA-256 hash |
 | 03 | Device Information | `Figure_03_Setup_Property_List.png` | Parsed `com.apple.purplebuddy.plist` |
 | 04 | Messages | `Figure_04_Messages_Database.png` | `sms.db` query with raw and UTC timestamps |
