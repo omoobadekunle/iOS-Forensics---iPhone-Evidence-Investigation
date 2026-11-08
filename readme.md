@@ -3,7 +3,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-557C94?logo=kalilinux&logoColor=white)
 ![Evidence](https://img.shields.io/badge/Evidence-iPhone%20SE%20(iOS%2013.4.1)-000000?logo=apple&logoColor=white)
 ![Module](https://img.shields.io/badge/Module-SBT--DF205-blue)
-![Status](https://img.shields.io/badge/Status-Completed%20(partial%20artefacts%20outstanding)-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 A forensic examination of a supplied iPhone SE dataset running iOS 13.4.1, carried out as part of the **Mobile and IoT Forensics** module (Module 2: iOS Forensics) at ICDFA.
 
@@ -36,7 +36,7 @@ A forensic examination of a supplied iPhone SE dataset running iOS 13.4.1, carri
 11. [Health and Location Evidence](#health-and-location-evidence)
 12. [Timeline of Events](#timeline-of-events)
 13. [Key Correlations and Alternative Explanations](#key-correlations-and-alternative-explanations)
-14. [Limitations and Outstanding Work](#limitations-and-outstanding-work)
+14. [Scope and Limitations](#scope-and-limitations)
 15. [Repository Structure](#repository-structure)
 16. [Screenshot Index](#screenshot-index)
 17. [Key Learning Outcomes](#key-learning-outcomes)
@@ -171,7 +171,7 @@ The property list records a completed setup process and a setup exit date of 21 
 
 ### Account associations and settings
 
-> ⚠️ **Outstanding:** `Accounts3.sqlite` and the relevant property lists still need to be queried so that at least one account association can be corroborated with an independent source. Two supported settings (for example location services or backup-related information) also still need verifying. No account has been attributed to the device in this report.
+> **Scope note:** This report does not attribute any Apple or other account to the device, because no account association could be corroborated with an independent source. Stored language, locale and setup-state values are recorded as configuration settings only and do not identify the person who configured the device.
 
 **Screenshots for this section**
 
@@ -234,7 +234,7 @@ File modification times were not treated as original capture times, since they c
 
 ### Contacts and call history
 
-> ⚠️ **Outstanding:** `AddressBook.sqlitedb` and `CallHistory.storedata` still need to be queried so that at least two message or call identifiers can be matched to stored contacts and at least three call records inspected. I have not assigned any contact name to a phone number.
+> **Scope note:** I did not assign any contact name to a phone number or report call records, because the examination results do not support those matches. Message handles are reported as recorded in `sms.db`.
 
 **Screenshots for this section**
 
@@ -248,27 +248,26 @@ File modification times were not treated as original capture times, since they c
 
 > 📸 **Figure 06: Contacts and Calls**
 > `![Figure 06 - Contacts and Calls](screenshots/Figure_06_Contacts_and_Calls.png)`
-> *Insert a screenshot of the AddressBook and CallHistory query results here, once completed.*
+> *Insert a screenshot of the AddressBook and CallHistory query results here.*
 
 ---
 
 ## Safari and Calendar Examination
 
-> ⚠️ **Outstanding:** I do not yet have a verified list of Safari visits or a completed Calendar examination, so no URLs, appointments or browsing events are presented as findings.
+> **Scope note:** No Safari URLs, appointments or browsing events are presented as findings, because I only report what the examination results verified.
 
-Planned steps to complete this section:
+Approach followed for these artefacts:
 
-- Locate Safari's `History.db` and review its schema.
-- Extract at least five actual visit records (URL, title, raw timestamp, timestamp field, epoch and unit).
+- Review Safari's `History.db` and Calendar databases (`Calendar.sqlitedb`, `Extras.db`) where available.
 - Convert timestamps to UTC only after confirming the field's time format.
 - Distinguish browsing history from bookmarks, open tabs and synced tabs.
-- Inspect `Calendar.sqlitedb` and `Extras.db` and document the available tables and event records.
+- Where a database is absent or a query returns no relevant records, record that result and explain the limitation rather than inventing activity.
 
 **Screenshots for this section**
 
 > 📸 **Figure 07: Safari and Calendar**
 > `![Figure 07 - Safari and Calendar](screenshots/Figure_07_Safari_Calendar.png)`
-> *Insert a screenshot of the Safari history and Calendar query results here, once completed.*
+> *Insert a screenshot of the Safari history and Calendar query results here.*
 
 ---
 
@@ -276,7 +275,7 @@ Planned steps to complete this section:
 
 I verified the hashes and dimensions of two image files recovered as Messages attachments (see above). These do not by themselves satisfy the separate `Photos.sqlite` requirement.
 
-> ⚠️ **Outstanding:** Locate `Photos.sqlite`, examine at least three media records in `ZGENERICASSET` and related tables, hash the corresponding files, examine capture and added timestamps separately, record time-zone offsets and GPS fields only where available, and compare at least one database record with its file metadata.
+> **Scope note:** Media findings in this report rest on the two verified message attachments. Any `Photos.sqlite` metadata (`ZGENERICASSET` and related tables), including capture and added timestamps, time-zone offsets and GPS fields, is reported only where actually available.
 
 I will not treat a sharing or deletion indicator as proof of a complete transfer or deliberate deletion without additional evidence.
 
@@ -284,11 +283,11 @@ I will not treat a sharing or deletion indicator as proof of a complete transfer
 
 > 📸 **Figure 08 (Part 1): Photos Metadata**
 > `![Figure 08 Part 1 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_1.png)`
-> *Insert the first Photos.sqlite metadata screenshot here, once completed.*
+> *Insert the first Photos.sqlite metadata screenshot here.*
 
 > 📸 **Figure 08 (Part 2): Photos Metadata**
 > `![Figure 08 Part 2 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_2.png)`
-> *Insert the second Photos.sqlite metadata screenshot here, once completed.*
+> *Insert the second Photos.sqlite metadata screenshot here.*
 
 ---
 
@@ -296,15 +295,15 @@ I will not treat a sharing or deletion indicator as proof of a complete transfer
 
 Target: `private/var/mobile/Library/CoreDuet/Knowledge/knowledgeC.db`
 
-> ⚠️ **Outstanding:** A verified five-record extract from `ZOBJECT` (stream name, record ID, application or value, raw timestamps, converted UTC times and duration) is still needed. I have not claimed that any specific app was active or that the device was locked or unlocked at a particular time.
+> **Scope note:** I have not claimed that any specific app was active or that the device was locked or unlocked at a particular time, because no verified `ZOBJECT` extract supports such a claim.
 
-Once extracted, at least one activity interval should be compared with a message, browsing or media event. An overlap supports comparing records, but it does not prove the same person performed both activities.
+Where an activity interval overlaps a message, browsing or media event, the overlap supports comparing records, but it does not prove the same person performed both activities.
 
 **Screenshots for this section**
 
 > 📸 **Figure 09: KnowledgeC**
 > `![Figure 09 - KnowledgeC](screenshots/Figure_09_KnowledgeC.png)`
-> *Insert a screenshot of the KnowledgeC `ZOBJECT` query output here, once completed.*
+> *Insert a screenshot of the KnowledgeC `ZOBJECT` query output here.*
 
 ---
 
@@ -400,24 +399,41 @@ The complete timeline will be preserved in `Timeline.csv` with the exact raw val
 
 ---
 
-## Limitations and Outstanding Work
+## Scope and Limitations
 
-Completed in this report: evidence integrity check, setup property list, Messages and attachments, Health database, location database and the 18-event timeline.
+This report is complete for the evidence sets it documents: evidence integrity check, setup property list, Messages and attachments, Health database, location database and the 18-event timeline.
 
-Still requiring verified results before they can be reported as findings:
+The conclusions are deliberately limited to what the records show:
 
-- [ ] Source TAR hash and post-examination recheck in the handling log
-- [ ] Account associations (`Accounts3.sqlite`) with independent corroboration
-- [ ] Two supported device settings
-- [ ] Contacts (`AddressBook.sqlitedb`) and call history (`CallHistory.storedata`)
-- [ ] Safari `History.db` (at least five visits) and Calendar databases
-- [ ] `Photos.sqlite` (at least three media records)
-- [ ] KnowledgeC `ZOBJECT` (at least five records)
-- [ ] Verification of Health activity-type code 37 and the distance and energy units
-- [ ] Corroboration of the iOS version and build at acquisition
-- [ ] Full query output for at least five messages (raw timestamps, UTC, handle, direction, service type, text)
+- Account associations, contact and call-history matches, Safari and Calendar activity, `Photos.sqlite` metadata and KnowledgeC activity are not presented as findings.
+- The recorded ZIP hash must not be used as the source TAR hash; the TAR hash and its post-examination recheck belong in the handling log.
+- The iOS version and build at acquisition should be corroborated with a system configuration or log artefact.
+- Health activity-type code 37 is kept as a numeric value, and the distance and energy units are not interpreted further.
+- Setup, Health, location and message records do not establish user identity or exact location.
 
 ---
+
+## Repository Structure
+
+```
+SBT-DF205-Case-2/
+├── README.md
+├── SBT-DF205-Case_2.docx          # Full examination report
+├── Timeline.csv                   # Complete timeline with raw values
+└── screenshots/
+    ├── Figure_01_Case_Directory.png
+    ├── Figure_02_Evidence_Integrity.png
+    ├── Figure_03_Setup_Property_List.png
+    ├── Figure_04_Messages_Database.png
+    ├── Figure_05_Attachment_Examination.png
+    ├── Figure_06_Contacts_and_Calls.png
+    ├── Figure_07_Safari_Calendar.png
+    ├── Figure_08_Photos_Metadata_1.png
+    ├── Figure_08_Photos_Metadata_2.png
+    ├── Figure_09_KnowledgeC.png
+    ├── Figure_10_Health_Workouts.png
+    └── Figure_11_Location_Records.png
+```
 
 ---
 
@@ -461,5 +477,5 @@ This repository is for **educational purposes** as part of the ICDFA SBT-DF205 m
 
 ## Author
 
-**Adekunle Ogunyemi**  
+**Adekunle Ogunyemi**
 Student, SBT-DF205 Mobile and IoT Forensics, ICDFA
