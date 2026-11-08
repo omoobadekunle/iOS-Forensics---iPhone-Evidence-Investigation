@@ -110,15 +110,13 @@ I tested the evidence archive with 7-Zip, and it passed the tool's integrity tes
 
 I kept my analysis material separate from the original evidence and used extracted working copies for database queries and metadata examination. The hash above belongs to the **ZIP archive**. The source **TAR** hash and its post-examination recheck must be recorded in the final handling log, and the ZIP hash must not be used in its place.
 
-**Screenshots for this section**
 
-> 📸 **Figure 01: Case Directory**
-> `![Figure 01 - Case Directory](screenshots/Figure_01_Case_Directory.png)`
-> *Insert a screenshot of the case working directory structure here.*
+<img width="975" height="327" alt="image" src="https://github.com/user-attachments/assets/a656d67e-5820-4af0-8736-8380857f4160" />  
+**Figure 01: Case Directory**
 
-> 📸 **Figure 02: Evidence Integrity**
-> `![Figure 02 - Evidence Integrity](screenshots/Figure_02_Evidence_Integrity.png)`
-> *Insert a screenshot of the 7-Zip test result and the SHA-256 hash here.*
+<img width="975" height="581" alt="image" src="https://github.com/user-attachments/assets/9222ea93-009b-41bf-9ce1-d97e318a4bb1" />
+ **Figure 02: Evidence Integrity**
+
 
 ---
 
@@ -153,11 +151,10 @@ The property list records a completed setup process and a setup exit date of 21 
 
 > **Scope note:** This report does not attribute any Apple or other account to the device, because no account association could be corroborated with an independent source. Stored language, locale and setup-state values are recorded as configuration settings only and do not identify the person who configured the device.
 
-**Screenshots for this section**
+<img width="975" height="581" alt="image" src="https://github.com/user-attachments/assets/0ef8a273-f0ad-4600-9910-004b5d3144b3" />
 
-> 📸 **Figure 03: Setup Property List**
-> `![Figure 03 - Setup Property List](screenshots/Figure_03_Setup_Property_List.png)`
-> *Insert a screenshot of the parsed `com.apple.purplebuddy.plist` output here.*
+**Figure 03: Setup Property List**
+
 
 ---
 
@@ -216,19 +213,18 @@ File modification times were not treated as original capture times, since they c
 
 > **Scope note:** I did not assign any contact name to a phone number or report call records, because the examination results do not support those matches. Message handles are reported as recorded in `sms.db`.
 
-**Screenshots for this section**
 
-> 📸 **Figure 04: Messages Database**
-> `![Figure 04 - Messages Database](screenshots/Figure_04_Messages_Database.png)`
-> *Insert a screenshot of the `sms.db` query output with raw and converted timestamps here.*
 
-> 📸 **Figure 05: Attachment Examination**
-> `![Figure 05 - Attachment Examination](screenshots/Figure_05_Attachment_Examination.png)`
-> *Insert a screenshot of the recovered attachments and their hashes here.*
+<img width="975" height="592" alt="image" src="https://github.com/user-attachments/assets/b3fa371c-d461-475a-98f8-9d6d42f0c566" />
+**Figure 04: Messages Database**
 
-> 📸 **Figure 06: Contacts and Calls**
-> `![Figure 06 - Contacts and Calls](screenshots/Figure_06_Contacts_and_Calls.png)`
-> *Insert a screenshot of the AddressBook and CallHistory query results here.*
+<img width="975" height="635" alt="image" src="https://github.com/user-attachments/assets/df6e3999-43c1-4dbc-99f4-be30d98933b9" />
+ **Figure 05: Attachment Examination**
+
+<img width="975" height="635" alt="image" src="https://github.com/user-attachments/assets/94b71e13-630a-4d1c-ae26-1ca3875b3c9d" />
+
+**Figure 06: Contacts and Calls**
+
 
 ---
 
@@ -243,11 +239,11 @@ Approach followed for these artefacts:
 - Distinguish browsing history from bookmarks, open tabs and synced tabs.
 - Where a database is absent or a query returns no relevant records, record that result and explain the limitation rather than inventing activity.
 
-**Screenshots for this section**
 
-> 📸 **Figure 07: Safari and Calendar**
-> `![Figure 07 - Safari and Calendar](screenshots/Figure_07_Safari_Calendar.png)`
-> *Insert a screenshot of the Safari history and Calendar query results here.*
+<img width="975" height="635" alt="image" src="https://github.com/user-attachments/assets/747443a4-f8d8-49c7-9723-4aac6bf9e71a" />
+
+ **Figure 07: Safari and Calendar**
+
 
 ---
 
@@ -259,15 +255,12 @@ I verified the hashes and dimensions of two image files recovered as Messages at
 
 I will not treat a sharing or deletion indicator as proof of a complete transfer or deliberate deletion without additional evidence.
 
-**Screenshots for this section**
+<img width="975" height="609" alt="image" src="https://github.com/user-attachments/assets/243ef757-da5b-4868-87a7-253554eec117" />
+ **Figure 08 (Part 1): Photos Metadata**
 
-> 📸 **Figure 08 (Part 1): Photos Metadata**
-> `![Figure 08 Part 1 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_1.png)`
-> *Insert the first Photos.sqlite metadata screenshot here.*
+<img width="975" height="609" alt="image" src="https://github.com/user-attachments/assets/e09c4a07-6db1-4559-ad07-a41609aa2811" />
+ **Figure 08 (Part 2): Photos Metadata**
 
-> 📸 **Figure 08 (Part 2): Photos Metadata**
-> `![Figure 08 Part 2 - Photos Metadata](screenshots/Figure_08_Photos_Metadata_2.png)`
-> *Insert the second Photos.sqlite metadata screenshot here.*
 
 ---
 
@@ -279,11 +272,9 @@ Target: `private/var/mobile/Library/CoreDuet/Knowledge/knowledgeC.db`
 
 Where an activity interval overlaps a message, browsing or media event, the overlap supports comparing records, but it does not prove the same person performed both activities.
 
-**Screenshots for this section**
+<img width="975" height="609" alt="image" src="https://github.com/user-attachments/assets/a3a588db-2397-415c-b174-53a3239a0519" />
+ **Figure 09: KnowledgeC**
 
-> 📸 **Figure 09: KnowledgeC**
-> `![Figure 09 - KnowledgeC](screenshots/Figure_09_KnowledgeC.png)`
-> *Insert a screenshot of the KnowledgeC `ZOBJECT` query output here.*
 
 ---
 
@@ -304,11 +295,10 @@ Source: `task7/health/healthdb_secure.sqlite` (tables `workout_events` and `work
 
 Timestamps were interpreted as seconds relative to Apple's epoch and converted to UTC. I kept the numeric activity-type value (37) rather than naming it, because I have not verified the mapping, and the units of the distance and energy fields still need confirming. These records show six workout entries but do not establish who performed the activity; the data could have been synchronised from an Apple Watch or another source.
 
-**Screenshots for this section**
 
-> 📸 **Figure 10: Health Workouts**
-> `![Figure 10 - Health Workouts](screenshots/Figure_10_Health_Workouts.png)`
-> *Insert a screenshot of the workout query results here.*
+<img width="975" height="590" alt="image" src="https://github.com/user-attachments/assets/968560f2-a1b5-46da-809a-74f976066c65" />
+ **Figure 10: Health Workouts**
+
 
 ### Location database
 
@@ -326,11 +316,9 @@ Record 85 duplicates the entry and exit times, coordinates and data-point count 
 
 Messages 40 and 41 (16:14:26 and 16:15:00 UTC on 12 April) fall within the long interval of records 82 to 85. This is a **temporal overlap, not proof** that a particular person was at those coordinates when the messages were sent.
 
-**Screenshots for this section**
+<img width="975" height="590" alt="image" src="https://github.com/user-attachments/assets/de31bc6d-f536-4a6e-8390-2fa5f463cb38" />
+ **Figure 11: Location Records**
 
-> 📸 **Figure 11: Location Records**
-> `![Figure 11 - Location Records](screenshots/Figure_11_Location_Records.png)`
-> *Insert a screenshot of the `ZRTVISITMO` query results here.*
 
 ---
 
@@ -433,5 +421,5 @@ This repository is for **educational purposes** as part of the ICDFA SBT-DF205 m
 
 ## Author
 
-**Adekunle Ogunyemi**
+**Adekunle Ogunyemi**  
 Student, SBT-DF205 Mobile and IoT Forensics, ICDFA
