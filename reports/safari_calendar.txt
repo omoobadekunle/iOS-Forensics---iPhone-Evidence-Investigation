@@ -1,0 +1,6 @@
+Alarm                CalendarItem            ClientSequence        ExceptionDateChanges    OccurrenceCacheDays    ScheduledTaskCache    _SqliteDatabaseProperties
+AlarmChanges         CalendarItemChanges     Contact               Identity                Participant            Sharee
+Attachment           Category                ContactChanges        Location                ParticipantChanges     ShareeChanges
+AttachmentChanges    CategoryLink            EventAction           Notification            Recurrence             Store
+Calendar             ClientCursor            EventActionChanges    NotificationChanges     RecurrenceChanges      StoreChanges
+CalendarChanges      ClientCursorConsumed    ExceptionDate         OccurrenceCache         ResourceChange         SuggestedEventInfo

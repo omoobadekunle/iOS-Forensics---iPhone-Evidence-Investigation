@@ -1,0 +1,17 @@
+ACHANGE                               ZDETECTEDFACE                     ZMOMENTSHARE                            Z_26ASSETS
+ATRANSACTION                          ZDETECTEDFACEGROUP                ZMOMENTSHAREPARTICIPANT                 Z_34MEMORIESBEINGCURATEDASSETS
+ATRANSACTIONSTRING                    ZDETECTEDFACEPRINT                ZPERSON                                 Z_34MEMORIESBEINGEXTENDEDCURATEDASSETS
+ZADDITIONALASSETATTRIBUTES            ZEDITEDIPTCATTRIBUTES             ZPERSONREFERENCE                        Z_34MEMORIESBEINGMOVIECURATEDASSETS
+ZADJUSTMENT                           ZEXTENDEDATTRIBUTES               ZPHOTOSHIGHLIGHT                        Z_34MEMORIESBEINGREPRESENTATIVEASSETS
+ZALBUMLIST                            ZFACECROP                         ZQUESTION                               Z_34SUGGESTIONSBEINGKEYASSETS
+ZASSETANALYSISSTATE                   ZFILESYSTEMBOOKMARK               ZSCENECLASSIFICATION                    Z_34SUGGESTIONSBEINGREPRESENTATIVEASSETS
+ZASSETDESCRIPTION                     ZFILESYSTEMVOLUME                 ZSCENEPRINT                             Z_45INVALIDMERGECANDIDATES
+ZCLOUDFEEDENTRY                       ZGENERICALBUM                     ZSEARCHDATA                             Z_45MERGECANDIDATES
+ZCLOUDMASTER                          ZGENERICASSET                     ZSUGGESTION                             Z_METADATA
+ZCLOUDMASTERMEDIAMETADATA             ZINTERNALRESOURCE                 ZUNIFORMTYPEIDENTIFIER                  Z_MODELCACHE
+ZCLOUDRESOURCE                        ZKEYWORD                          ZUNMANAGEDADJUSTMENT                    Z_PRIMARYKEY
+ZCLOUDSHAREDALBUMINVITATIONRECORD     ZLEGACYFACE                       Z_17CLUSTERREJECTEDPERSONS              Z_RT_GenericAsset_boundedByRect
+ZCLOUDSHAREDCOMMENT                   ZMEDIAANALYSISASSETATTRIBUTES     Z_17REJECTEDPERSONS                     Z_RT_GenericAsset_boundedByRect_node
+ZCODEC                                ZMEMORY                           Z_17REJECTEDPERSONSNEEDINGFACECROPS     Z_RT_GenericAsset_boundedByRect_parent
+ZCOMPUTEDASSETATTRIBUTES              ZMOMENT                           Z_1KEYWORDS                             Z_RT_GenericAsset_boundedByRect_rowid
+ZDEFERREDREBUILDFACE                  ZMOMENTLIST                       Z_25ALBUMLISTS

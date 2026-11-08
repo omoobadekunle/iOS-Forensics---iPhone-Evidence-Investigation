@@ -1,0 +1,2 @@
+255ac0cac61a3f701852bdd76a31f39e95b3760f04d53eb9e10a45cc2464cb3e  /home/kali/SBT-DF205-Case-2-notes/task8/recovered_attachments/Volumes/JOSH/NoTar-13-4-1/private/var/mobile/Library/SMS/Attachments/97/07/476F1BF4-4FE5-466A-AD8C-605576C5F16D/iOS_Bug_Reporting_for_Forensic_Purposes_1.2.pdf
+82118655004fa94dc9257988cab0e02b7efda5fada929cbd92d04def11a136b6  /home/kali/SBT-DF205-Case-2-notes/task8/recovered_attachments/Volumes/JOSH/NoTar-13-4-1/private/var/mobile/Library/SMS/Attachments/68/08/430548CB-3157-418F-9B0E-3E677784E7A4/How was an iPhone set up?.pdf

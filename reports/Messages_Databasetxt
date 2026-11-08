@@ -1,0 +1,34 @@
+MessageID          UTC                  Handle          FromMe  Service                                                  Message
+---------  -------------------  ----------------------  ------  --------  ------------------------------------------------------------------------------------------------------
+       34  2020-04-12 12:54:21  joshua.hickman1@me.com       1  iMessage  Test iMessage. I hope this is a blue bubble!
+
+       35  2020-04-12 12:55:23  joshua.hickman1@me.com       0  iMessage  It is!  We will still need to generate a green bubble at some point.
+
+       36  2020-04-12 12:56:45  joshua.hickman1@me.com       1  iMessage  ￼
+
+       37  2020-04-12 12:58:01  joshua.hickman1@me.com       0  iMessage  ￼
+
+       38  2020-04-12 13:16:19  joshua.hickman1@me.com       1  iMessage  ￼Here is Heather’s paper from DFIR Review.
+
+       39  2020-04-12 13:21:15  joshua.hickman1@me.com       0  iMessage  ￼Here is the sysdiagnose paper. Enjoy!
+
+       40  2020-04-12 16:14:26  +19195790479                 0  SMS       Hopefully this is a green message.
+                                                                          ~A4eIvwAGEzyYAgg
+
+       41  2020-04-12 16:15:00  joshua.hickman1@me.com       1  iMessage  It is. But there was some weird stuff at the end.
+
+       42  2020-04-12 16:16:15  +19195790479                 0  SMS       Here is another one.
+                                                                          ~s9LlsgAIo/D1mAg
+
+       43  2020-04-15 16:20:41  +19195790479                 1  SMS       This is a test message for Siri and CarPlay
+
+       44  2020-04-15 17:19:51  32665                        0  SMS       👤 Tyrique Austin is a new Facebook friend suggestion: https://fb.com/l/aPaNunyL3ctrUT
+                                                                          ~Ks2UlQADMbyP5wg
+
+       45  2020-04-16 11:45:50  joshua.hickman1@me.com       1  iMessage  https://www.icloud.com/iclouddrive/0dSlbjOjW68xE-w-Uko8DcXJw#iOS_Bug_Reporting_for_Forensic_Purposes_1
+
+       46  2020-04-16 12:17:58  joshua.hickman1@me.com       1  iMessage  This is a test message for Siri dictation
+
+       47  2020-04-16 12:56:49  joshua.hickman1@me.com       0  iMessage  This is your test message for Siri dictation
+
+       48  2020-04-16 12:59:29  joshua.hickman1@me.com       0  iMessage  This is your second test message for Siri dictation
