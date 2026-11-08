@@ -118,16 +118,7 @@ I kept my analysis material separate from the original evidence and used extract
 
 ### Working Directory Structure
 
-```
-$HOME/SBT-DF205-Case-2-notes/
-├── task3/Volumes/JOSH/NoTar-13-4-1/   # extracted file-system material
-├── task7/
-│   ├── health/healthdb_secure.sqlite  # Health records
-│   └── routined/Cache.sqlite          # location-related records
-└── task8/
-    ├── setup_evidence/                # setup property-list material
-    ├── recovered_attachments/         # recovered message attachments
-    └── reports/                       # examination output and reports
+
 ```
 
 **Screenshots for this section**
